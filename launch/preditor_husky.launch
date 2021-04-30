@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+
+  <node name="safety_controller" pkg="visual_path_husky" type="safety_controller.py" output="screen" />
+  <node name="circle_performer" pkg="visual_path_husky" type="circle_plus_marker.py" output="screen" />
+
+  <node pkg="topic_tools" type="throttle" name="throttle" args="messages desvio_da_curvatura 5.0"/>
+
+  <node pkg="opencv101" type="opencv101_node" name="drawCircle" />
+  <node pkg="opencv101" type="getReferences.py" name="getReferences" />
+	<node pkg="opencv101" type="preditor_plus_circle.py" name="preditor" output="screen" />
+	<node pkg="opencv101" type="optimizerCaller" name="optimizerCaller" />
+
+</launch>
