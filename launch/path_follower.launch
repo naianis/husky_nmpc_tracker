@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <launch>
 
-  <node name="detection_switch" pkg="husky_nmpc_tracker" type="detection_switch" output="screen" /> 
+  <node name="detection_switch_temp" pkg="husky_nmpc_tracker" type="detection_switch_temp" output="screen" /> 
   <node name="downsample_cloud" pkg="husky_nmpc_tracker" type="downsample_cloud" output="screen" />
   <!--<node name="circle_plus_marker" pkg="husky_nmpc_tracker" type="circle_plus_marker.py" output="screen" />-->
-  <node name="circle_plus_marker" pkg="husky_nmpc_tracker" type="circle_plus_marker.py" output="screen" />
+  <node name="deviation_temp" pkg="husky_nmpc_tracker" type="deviation_temp.py" output="screen" />
 
   <node pkg="topic_tools" type="throttle" name="throttle" args="messages desvio_da_curvatura 5.0"/>
 
   <node pkg="opencv101" type="opencv101_node" name="drawCircle" />
   <node pkg="opencv101" type="getReferences.py" name="getReferences" />
-  <node pkg="opencv101" type="preditor_plus_circle1.py" name="preditor" output="screen" />
+  <node pkg="opencv101" type="preditor_control_temp.py" name="preditor" output="screen" />
   <node pkg="opencv101" type="optimizerCaller" name="optimizerCaller" />
 
 </launch>
