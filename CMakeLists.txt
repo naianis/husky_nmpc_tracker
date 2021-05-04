@@ -232,6 +232,10 @@ add_executable(old_detection_switch src/old_detection_switch.cpp)
 target_link_libraries(old_detection_switch ${catkin_LIBRARIES})
 add_dependencies(old_detection_switch husky_nmpc_tracker_generate_messages_cpp)
 
+add_executable(detection_switch_temp src/detection_switch_temp.cpp)
+target_link_libraries(detection_switch_temp ${catkin_LIBRARIES})
+add_dependencies(detection_switch_temp husky_nmpc_tracker_generate_messages_cpp)
+
 add_executable(obstacle_avoidance src/obstacle_avoidance.cpp)
 target_link_libraries(obstacle_avoidance ${catkin_LIBRARIES})
 add_dependencies(obstacle_avoidance husky_nmpc_tracker_generate_messages_cpp)
